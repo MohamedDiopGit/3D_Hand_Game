@@ -6,8 +6,8 @@ public class HandTracking : MonoBehaviour
 {
     // Start is called before the first frame update
     public UDPReceive udpReceive;
-    public GameObject[] handPoints0;
-    public GameObject[] handPoints1;
+    public GameObject[] handPoints0;    // First hand
+    public GameObject[] handPoints1;    // Second hand
     void Start()
     {
         
@@ -24,12 +24,14 @@ public class HandTracking : MonoBehaviour
         string[] points = data.Split(',');
         
 
-        for (int i = 0; i< 21; i++){
+        for (int i = 0; i< 21; i++){        // First hand
 
 
             float x = 14-float.Parse(points[i*3]) / 50; // x values
             float y = float.Parse(points[i*3 + 1]) / 130;  // y
-            //float z = float.Parse(points[i*3 + 2]) / 100;  // z
+
+
+            // Get a z axis motion
 
             float dx = float.Parse(points[1*3]) - float.Parse(points[2*3]);
             float dy = float.Parse(points[1*3 + 1]) - float.Parse(points[2*3 + 1]);
@@ -42,12 +44,13 @@ public class HandTracking : MonoBehaviour
 
         }
         
-        for (int i = 21; i< 42; i++){
+        for (int i = 21; i< 42; i++){       // Second hand
 
 
             float x = 14-float.Parse(points[i*3]) / 50; // x values
             float y = float.Parse(points[i*3 + 1]) / 130;  // y
-            //float z = float.Parse(points[i*3 + 2]) / 100;  // z
+            
+            // Get a z axis motion
 
             float dx = float.Parse(points[(1+21)*3]) - float.Parse(points[(2+21)*3]);
             float dy = float.Parse(points[(1+21)*3 + 1]) - float.Parse(points[(2+21)*3 + 1]);
