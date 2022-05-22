@@ -8,4 +8,4 @@ To run it:
  4-  And place your hands on your webcam screen
  5-  Run the unity game, then you should be able to move the cube with both of your hands.
 
-If you want to modify how the hands move in the game, or even manipulate the data received, just check Assets/HandTracking.cs
+If you want to modify how the hands move in the game, or even manipulate the data received, just check Assets/HandTracking.cs folder
