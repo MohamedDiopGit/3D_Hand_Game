@@ -26,7 +26,7 @@ public class HandTracking : MonoBehaviour
 
         for (int i = 0; i< 21; i++){        // First hand
 
-
+            // initial position on screen
             float x = 14-float.Parse(points[i*3]) / 50; // x values
             float y = float.Parse(points[i*3 + 1]) / 130;  // y
 
